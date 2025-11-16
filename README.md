@@ -1,14 +1,37 @@
-## 🚀 Overview  
-MCP-Server is a minimal, extensible Python server that follows the Model Context Protocol (MCP). It exposes server-side “tools” that can be called by MCP-compatible clients (e.g., LLM-powered agents).
+# 🗒️ AI Sticky Notes — MCP Server
 
-This repository includes:  
-- `main.py` — core MCP server implementation  
-- `pyproject.toml` — Python packaging setup  
-- `.python-version` — pinned Python version  
-- Development notes and configuration files
+A lightweight **Model Context Protocol (MCP)** server that exposes a simple “sticky notes” system through **tools**, **resources**, and **prompts**.  
+This server demonstrates how to build an MCP-compatible backend using **FastMCP**, enabling any MCP-enabled client (LLMs, agents, RAG systems) to read, write, and summarize notes.
 
-## 🧰 Features  
-- MCP-compatible tool discovery and tool invocation  
-- Simple Python function → MCP tool interface  
-- Easy extensibility for custom tools  
-- Ready for local development or containerization
+---
+
+## 🚀 Features
+
+This MCP server provides four main capabilities:
+
+### 🧰 Tools
+| Tool | Description |
+|------|-------------|
+| `add_note(message: str)` | Appends a new note to `notes.txt` |
+| `read_notes()` | Returns all notes as a single text block |
+
+### 📦 Resources
+| Resource | URI | Description |
+|----------|-----|-------------|
+| `notes://latest` | Returns the most recently added note |
+
+### 💬 Prompts
+| Prompt | Description |
+|--------|-------------|
+| `note_summary_prompt()` | Returns a ready-to-use prompt instructing an AI to summarize all notes |
+
+---
+
+## 📂 How It Works
+
+The server stores notes in a local text file: notes.txt
+All interactions—adding notes, reading them, getting the latest note, and generating an AI summary prompt—are routed through MCP.
+
+
+
+
