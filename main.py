@@ -1,6 +1,6 @@
 from mcp.server.fastmcp import FastMCP
 import os
-
+#hello
 # Create an MCP server
 mcp = FastMCP("AI Sticky Notes")
 
